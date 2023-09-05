@@ -39,8 +39,8 @@ The game was preloaded on the majority of their phones. As many 2D games, Snake 
 learning approaches. Some versions of it used to be featured on the popular OpenAI Gym environment. 
 This dissertation presents a simple version of the game and its structure. Two different agents are compared to test the environment.
 One agent uses a \textit{value function approximation} algorithm with two networks and a replay buffer. The other agent adopts a \textit{actor-critic method} with 
-the help of an advantage function to stabilize the training. The algorithms are briefly presented with their training specifications. In the end 
-we'll show the results during training and subsequent tests.
+the help of an advantage function to stabilize the training. The algorithms are briefly presented with their training specifications. In the end, 
+the results will be shown during training and subsequent tests.
 
 \section{Background}
 Snake is a single-player video game. The game is played on a two-dimensional square board. A snake is randomly placed on the board and is represented 
@@ -86,11 +86,11 @@ The reward structure is set to mimic the game dynamics.
 \end{tabular}
 \end{center}
 
-*\textit{This specific reward was necessary for avoiding the agent taking circular steps without any punishment.} \\
+*\textit{This specific reward was necessary to avoid the agent taking circular steps without any punishment.} \\
 Despite the trivial nature of the game the number of possible states for a 5x5 matrix is about $3^{25}$.
 
 \section{Experimental Algorithms}
-In order to test our Snake environment we experimented with two radical approaches. In particular tests have been carried out with double DQN
+In order to test the Snake environment, two radical approaches have been experimented. In particular, tests have been carried out with double DQN
 as a value function approximation and A2C as an actor-critic method. To keep consistency for a true analysis both were trained with the same parameters:
 \begin{itemize}
     \item \textit{discount factor} = 0.95
@@ -103,7 +103,7 @@ The optimizers and value loss functions used are also the same from \textit{tens
 \end{itemize}
 
 \subsection{DDQN}
-Double DQN\cite{b1} is an improvement over the regular DQN algorithm with buffer replay. Instead of using only one network for action selection and action evaluation
+Double DQN\cite{b1} is an improvement over the regular DQN algorithm with buffer replay. Instead of using only one network for action selection and action evaluation,
 there are two networks, one for each job. The network for action selection is called the \textit{Online network}. The one for evaluating is the \textit{Target network}.
 The presence of the second network prevents the algorithm to overstimate action values. The two networks are identical.
 In our case they are made of two hidden layers fully connected with 32 units each.
@@ -165,7 +165,7 @@ number of steps to eat a fruit. Max scores are very similar. Although considerin
 may be due to insufficient training or simply due to the more difficulties the agent finds in the environment tested.
 
 \section{Conclusion}
-Snake is a trivial videogame that is not as popular as it used to be. Although it still represents an ideal challenge for AI-agents. In our work we showed how a simple version
+Snake is a trivial videogame that is not as popular as it used to be, although it still represents an ideal challenge for AI-agents. In our work we showed how a simple version
 of it still makes a suitable testbed for comparing algorithms and networks. In particular the DDQN network proved significantly capable of mastering it. On the other
 hand A2C agent achieved very good results with less robustness overall.
 
